@@ -212,7 +212,7 @@ static bool getComputerMove(TicTacToe::Entry computer, TicTacToe& t)
 }
 
 
-void checkEmpty(Entry e)
+void cheatingCpu(Entry e)
 {
 
 switch(space){
