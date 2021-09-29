@@ -1,4 +1,3 @@
-
 #include <iostream>
 
 using namespace std;
@@ -212,82 +211,106 @@ static bool getComputerMove(TicTacToe::Entry computer, TicTacToe& t)
 }
 
 
-void cheatingCpu(Entry e)
+void cheatingCpu(TicTacToe::Entry e)
 {
+    /*
+    * 
+    * for (int i = 0; i < getSize(); i++)
+        {
+            for (int j = 0; j < getSize(); j++)
+            {
+                if CanSpaceBeUsedToWin(i,j, e, t)
+                    board[i, j] = e;
+            }
 
-switch(space){
-//first row
+        }
+    */
+
+    switch (space) {
+        //first row
     case board[0][0] == (char)e && board[0][1] == (char)e:
         board[0][2] = (char)computer;
         break;
-//first row 2
+        //first row 2
     case board[0][0] == (char)e && board[0][2] == (char)e:
         board[0][1] = (char)computer;
         break;
-//second row
+        //second row
     case board[1][0] == (char)e && board[1][1] == (char)e:
         board[1][2] = (char)computer;
         break;
-//second row 2
+        //second row 2
     case board[1][0] == (char)e && board[1][2] == (char)e:
         board[1][1] = (char)computer;
         break;
-// third row
+        // third row
     case board[2][0] == (char)e && board[2][1] == (char)e:
         board[2][2] = (char)computer;
         break;
-// third row 2
+        // third row 2
     case board[2][0] == (char)e && board[2][2] == (char)e:
         board[2][1] = (char)computer;
         break;
-// first col 
- case board[0][0] == (char)e && board[1][0] == (char)e:
-     board[2][0] = (char)computer;
+        // first col 
+    case board[0][0] == (char)e && board[1][0] == (char)e:
+        board[2][0] = (char)computer;
         break;
-// first col 2
- case board[0][0] == (char)e && board[2][0] == (char)e:
-     board[1][0] = (char)computer;
+        // first col 2
+    case board[0][0] == (char)e && board[2][0] == (char)e:
+        board[1][0] = (char)computer;
         break;
-// second col
-         case board[0][1] == (char)e && board[1][1] == (char)e:
-             board[2][1] = (char)computer;
+        // second col
+    case board[0][1] == (char)e && board[1][1] == (char)e:
+        board[2][1] = (char)computer;
         break;
-// second col 2
-         case board[0][1] == (char)e && board[2][1] == (char)e:
-             board[1][1] = (char)computer;
+        // second col 2
+    case board[0][1] == (char)e && board[2][1] == (char)e:
+        board[1][1] = (char)computer;
         break;
-// third col
-         case board[0][2] == (char)e && board[1][2] == (char)e:
-             board[2][2] = (char)computer;
+        // third col
+    case board[0][2] == (char)e && board[1][2] == (char)e:
+        board[2][2] = (char)computer;
         break;
-// third col 2
-         case board[0][2] == (char)e && board[2][2] == (char)e:
-             board[1][2] = (char)computer;
+        // third col 2
+    case board[0][2] == (char)e && board[2][2] == (char)e:
+        board[1][2] = (char)computer;
         break;
-// diagonal 1
+        // diagonal 1
     case board[0][0] == (char)e && board[1][1] == (char)e:
         board[2][2] = (char)computer;
         break;
-// diagonal 1.2
+        // diagonal 1.2
     case board[0][0] == (char)e && board[2][2] == (char)e:
         board[1][1] = (char)computer;
         break;
-// diagonal 2
+        // diagonal 2
     case board[0][2] == (char)e && board[1][1] == (char)e:
         board[2][0] = (char)computer;
         break;
-// diagonal 2
+        // diagonal 2
     case board[0][2] == (char)e && board[2][0] == (char)e:
         board[1][1] = (char)computer;
         break;
     default:
         break;
 
+    }
+
+    return;
 }
 
-return;
+//
+
+bool CanSpaceBeUsedToWin(int x, int y, TicTacToe::Entry e, TicTacToe t)
+{
+    if (t.board[x+1][y] == (char)e && t.board[x+2][y] == (char)e)
+    {
+        // return true
+    }
+
+    return false;
 }
-*/
+
 
 // ----------------------------
 // main
@@ -331,4 +354,3 @@ int main()
 
     return(0);
 }
-
