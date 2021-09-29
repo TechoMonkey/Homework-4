@@ -214,7 +214,7 @@ static bool getComputerMove(TicTacToe::Entry computer, TicTacToe& t)
 void cheatingCpu(TicTacToe::Entry e)
 {
     /*
-    * 
+    *
     * for (int i = 0; i < getSize(); i++)
         {
             for (int j = 0; j < getSize(); j++)
@@ -226,73 +226,89 @@ void cheatingCpu(TicTacToe::Entry e)
         }
     */
 
-    switch (space) {
-        //first row
-    case board[0][0] == (char)e && board[0][1] == (char)e:
+
+    //first row
+    if (board[0][0] == (char)e && board[0][1] == (char)e)
+    {
         board[0][2] = (char)computer;
-        break;
-        //first row 2
-    case board[0][0] == (char)e && board[0][2] == (char)e:
+
+    }
+    //first row 2
+    else if (board[0][0] == (char)e && board[0][2] == (char)e)
+    {
         board[0][1] = (char)computer;
-        break;
-        //second row
-    case board[1][0] == (char)e && board[1][1] == (char)e:
+    }
+    //second row
+    else if (board[1][0] == (char)e && board[1][1] == (char)e)
+    {
         board[1][2] = (char)computer;
-        break;
-        //second row 2
-    case board[1][0] == (char)e && board[1][2] == (char)e:
+    }
+    //second row 2
+    else if (board[1][0] == (char)e && board[1][2] == (char)e)
+    {
         board[1][1] = (char)computer;
-        break;
+    }
         // third row
-    case board[2][0] == (char)e && board[2][1] == (char)e:
+    else if (board[2][0] == (char)e && board[2][1] == (char)e)
+    {
         board[2][2] = (char)computer;
-        break;
+    }   
         // third row 2
-    case board[2][0] == (char)e && board[2][2] == (char)e:
+    else if (board[2][0] == (char)e && board[2][2] == (char)e)
+    {
         board[2][1] = (char)computer;
-        break;
+    }
         // first col 
-    case board[0][0] == (char)e && board[1][0] == (char)e:
+    else if (board[0][0] == (char)e && board[1][0] == (char)e)
+    {
         board[2][0] = (char)computer;
-        break;
+    }
         // first col 2
-    case board[0][0] == (char)e && board[2][0] == (char)e:
+    else if (board[0][0] == (char)e && board[2][0] == (char)e)
+    {
         board[1][0] = (char)computer;
-        break;
+    }
         // second col
-    case board[0][1] == (char)e && board[1][1] == (char)e:
+    else if (board[0][1] == (char)e && board[1][1] == (char)e)
+    {
         board[2][1] = (char)computer;
-        break;
+    }
         // second col 2
-    case board[0][1] == (char)e && board[2][1] == (char)e:
+    else if (board[0][1] == (char)e && board[2][1] == (char)e)
+    {
         board[1][1] = (char)computer;
-        break;
+    }
         // third col
-    case board[0][2] == (char)e && board[1][2] == (char)e:
+    else if (board[0][2] == (char)e && board[1][2] == (char)e)
+    {
         board[2][2] = (char)computer;
-        break;
+    }
         // third col 2
-    case board[0][2] == (char)e && board[2][2] == (char)e:
+    else if (board[0][2] == (char)e && board[2][2] == (char)e)
+    {
         board[1][2] = (char)computer;
-        break;
+    }
         // diagonal 1
-    case board[0][0] == (char)e && board[1][1] == (char)e:
+    else if (board[0][0] == (char)e && board[1][1] == (char)e)
+    {
         board[2][2] = (char)computer;
-        break;
+    }
         // diagonal 1.2
-    case board[0][0] == (char)e && board[2][2] == (char)e:
+    else if (board[0][0] == (char)e && board[2][2] == (char)e)
+    {
         board[1][1] = (char)computer;
-        break;
+    }
         // diagonal 2
-    case board[0][2] == (char)e && board[1][1] == (char)e:
+    else if (board[0][2] == (char)e && board[1][1] == (char)e)
+    {
         board[2][0] = (char)computer;
-        break;
+    }
         // diagonal 2
-    case board[0][2] == (char)e && board[2][0] == (char)e:
+    else if (board[0][2] == (char)e && board[2][0] == (char)e)
+    {
         board[1][1] = (char)computer;
-        break;
-    default:
-        break;
+    }
+    else
 
     }
 
@@ -303,7 +319,7 @@ void cheatingCpu(TicTacToe::Entry e)
 
 bool CanSpaceBeUsedToWin(int x, int y, TicTacToe::Entry e, TicTacToe t)
 {
-    if (t.board[x+1][y] == (char)e && t.board[x+2][y] == (char)e)
+    if (t.board[x + 1][y] == (char)e && t.board[x + 2][y] == (char)e)
     {
         // return true
     }
